@@ -1,12 +1,9 @@
-const { PostgreSqlContainer } = require("@testcontainers/postgresql");
-const { Pool } = require("pg");
 const {
-  setPool,
-  getNotes,
-  getNoteById,
-  createNote,
-  updateNote,
-  deleteNote,
+    getNotes,
+    getNoteById,
+    createNote,
+    updateNote,
+    deleteNote,
 } = require("../models/notesModel");
 const { setupTestDB, teardownTestDB } = require("./setupTestDB");
 
