@@ -1,4 +1,3 @@
-// test/setupTestDB.js
 const { PostgreSqlContainer } = require("@testcontainers/postgresql");
 const { Pool } = require("pg");
 const { setPool } = require("../models/notesModel");
