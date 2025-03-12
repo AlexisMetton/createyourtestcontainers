@@ -5,20 +5,8 @@ const {
     updateNote,
     deleteNote,
 } = require("../models/notesModel");
-const { setupTestDB, teardownTestDB } = require("./setupTestDB");
 
 describe("Tests du modèle Notes", () => {
-
-    beforeAll(async () => {
-
-        // Initialise database
-        await setupTestDB();
-    }, 30000);
-
-    afterAll(async () => {
-        // Clean connexion et stop container
-        await teardownTestDB();
-    });
 
     test("createNote and getNotes", async () => {
         const note = await createNote("Title 1", "Content 1");

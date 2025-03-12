@@ -1,8 +1,4 @@
-let pool;
-
-const setPool = (p) => {
-  pool = p;
-};
+const pool = require("../config/db");
 
 const getNotes = async () => {
     const result = await pool.query('SELECT * FROM notes ORDER BY id DESC');
@@ -35,4 +31,4 @@ const deleteNote = async (id) => {
     return { message: 'Note successfully deleted' };
 };
 
-module.exports = { setPool, getNotes, getNoteById, createNote, updateNote, deleteNote };
+module.exports = { getNotes, getNoteById, createNote, updateNote, deleteNote };

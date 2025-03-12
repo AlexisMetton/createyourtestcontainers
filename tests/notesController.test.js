@@ -1,24 +1,15 @@
 const express = require("express");
 const request = require("supertest");
 const notesRouter = require("../routes/notes");
-const { setupTestDB, teardownTestDB } = require("./setupTestDB");
 
 let app;
 
 beforeAll(async () => {
-    // Initialise database
-    await setupTestDB();
-
     // Create Express et router on "/notes"
     app = express();
     app.use(express.json());
     app.use("/notes", notesRouter);
 }, 30000);
-
-afterAll(async () => {
-    // Close pool and stop container
-    await teardownTestDB();
-});
 
 describe("functionals test with endpoints /notes", () => {
     test("POST /notes - Create note successfully", async () => {
